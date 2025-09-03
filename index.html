@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>你的名字 · 学术主页</title>
+  <meta name="description" id="meta-desc" content="学术主页：研究领域、发表论文、工作论文与联系方式。" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{--bg:#0c0f1a;--text:#e7eaf1;--muted:#9aa3b2;--card:#111529;--border:#1b2340;--accent:#74a8ff;--accent-2:#9fd2ff;--shadow:0 10px 30px rgba(0,0,0,.25)}
+    @media(prefers-color-scheme:light){:root{--bg:#f7f9fc;--text:#0f172a;--muted:#64748b;--card:#ffffff;--border:#e5e7eb;--accent:#2563eb;--accent-2:#60a5fa;--shadow:0 8px 24px rgba(0,0,0,.08)}}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.7}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:980px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0)),var(--bg);backdrop-filter:saturate(1.2) blur(6px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .avatar{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);object-fit:cover;box-shadow:var(--shadow)}
+    .brand .title{display:flex;flex-direction:column}
+    .brand .title strong{font-size:18px}
+    .brand .title span{font-size:12px;color:var(--muted)}
+    nav a{margin-left:16px;font-weight:600}
+    .lang-btn{margin-left:12px;padding:6px 10px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer}
+    .hero{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin:28px 0;padding:22px;border:1px solid var(--border);border-radius:16px;background:linear-gradient(180deg,rgba(116,168,255,.08),transparent 40%),var(--card);box-shadow:var(--shadow)}
+    .hero img{width:120px;height:120px;border-radius:16px;border:1px solid var(--border);object-fit:cover}
+    .hero h1{margin:0;font-size:clamp(26px,4vw,38px)}
+    .hero p{margin:.3rem 0 0;color:var(--muted)}
+    .section{margin:34px 0 12px;display:flex;align-items:center;justify-content:space-between}
+    .section h2{margin:0;font-size:22px}
+    .card{border:1px solid var(--border);border-radius:14px;background:var(--card);padding:18px;margin-bottom:12px}
+    .list{padding-left:1.2rem}
+    .list li{margin:10px 0}
+    .pill{display:inline-block;padding:4px 8px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted)}
+    footer{margin:40px 0 20px;color:var(--muted);text-align:center}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:760px){.grid-2{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img class="avatar" src="/assets/avatar.jpg" alt="avatar" />
+        <div class="title">
+          <strong data-i18n="name">你的名字</strong>
+          <span data-i18n="affil">某大学 · 经济学院 · 职称</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#home" data-i18n="nav.home">主页</a>
+        <a href="#about" data-i18n="nav.about">关于</a>
+        <a href="#pubs" data-i18n="nav.pubs">发表论文</a>
+        <a href="#wp" data-i18n="nav.wp">工作论文</a>
+        <a href="#contact" data-i18n="nav.contact">联系</a>
+        <button id="langToggle" class="lang-btn" title="切换语言">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <img src="/assets/portrait.jpg" alt="portrait" />
+      <div>
+        <h1 data-i18n="hero.title">你的名字（Name）</h1>
+        <p data-i18n="hero.text">现任 <strong>职称</strong>，就职于 <strong>单位</strong>。研究领域：<em>应用微观经济理论 / 竞赛理论 / 产业组织 / 行为经济学</em>。<br>教育背景：<span class="mono">经济学博士，学校，年份</span>。</p>
+      </div>
+    </section>
+
+    <section class="grid-2" id="about">
+      <div class="card">
+        <div class="section"><h2 data-i18n="about.title">简介</h2><span class="pill" data-i18n="about.pill">简历</span></div>
+        <p data-i18n="about.text">用 3–5 句介绍你的学术背景与研究兴趣，突出研究路线与代表性成果（可量化）。</p>
+        <ul class="list">
+          <li data-i18n="about.edu"><strong>教育</strong>：BA/MA/PhD（学校，年份）。</li>
+          <li data-i18n="about.appt"><strong>任职</strong>：讲师 → 副教授 → 教授（年份）。</li>
+          <li data-i18n="about.fields"><strong>研究方向</strong>：Contest Theory, Insurance, IO, Behavioral Economics 等。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="section"><h2 data-i18n="links.title">链接</h2><span class="pill" data-i18n="links.pill">资料</span></div>
+        <p data-i18n="links.items"><a href="/cv.pdf" target="_blank" rel="noopener">CV / 简历</a> · <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a></p>
+        <p data-i18n="links.note">也可以放 SSRN / ORCID / RePEc 等学术档案链接。</p>
+      </div>
+    </section>
+
+    <section id="pubs">
+      <div class="section"><h2 data-i18n="pubs.title">发表论文</h2><a href="#pubs" data-i18n="pubs.view">查看全部</a></div>
+      <div class="card">
+        <ol class="list">
+          <li data-i18n="pubs.item1"><strong>论文标题</strong>，合作者，<em>期刊</em>，年份，卷(期)，页码。 <a href="#">PDF</a> · <a href="#">附录</a></li>
+          <li data-i18n="pubs.item2"><strong>论文标题</strong>，合作者，<em>期刊</em>，年份。 <a href="#">DOI</a></li>
+          <li data-i18n="pubs.item3"><strong>论文标题</strong>，合作者，<em>期刊（即刊）</em>。 <span class="pill">即刊</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="wp">
+      <div class="section"><h2 data-i18n="wp.title">工作论文</h2><span class="pill" data-i18n="wp.pill">草稿</span></div>
+      <div class="card">
+        <ol class="list">
+          <li data-i18n="wp.item1"><strong>工作论文标题</strong>，合作者。 <a href="#">PDF</a> · <a href="#">Slides</a></li>
+          <li data-i18n="wp.item2"><strong>工作论文标题</strong>，合作者。 <a href="#">arXiv/SSRN</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section"><h2 data-i18n="contact.title">联系</h2><span class="pill" data-i18n="contact.pill">通信信息</span></div>
+      <div class="card">
+        <p>
+          <strong data-i18n="contact.addrLabel">地址</strong>：<span data-i18n="contact.addr">某大学 经济学院（邮编）</span><br>
+          <strong data-i18n="contact.emailLabel">邮箱</strong>：<a href="mailto:you@uni.edu">you@uni.edu</a><br>
+          <strong data-i18n="contact.officeLabel">办公室</strong>：<span data-i18n="contact.office">楼号-房间</span><br>
+          <strong data-i18n="contact.phoneLabel">电话</strong>：<span data-i18n="contact.phone">+86-010-xxxx-xxxx</span>
+        </p>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> <span data-i18n="name">你的名字</span> · Hosted on GitHub Pages</footer>
+  </main>
+
+  <script>
+    const i18n = {
+      zh: {
+        titleTag: '你的名字 · 学术主页',
+        metaDesc: '学术主页：研究领域、发表论文、工作论文与联系方式。',
+        name: '你的名字',
+        affil: '某大学 · 经济学院 · 职称',
+        'nav.home': '主页', 'nav.about': '关于', 'nav.pubs': '发表论文', 'nav.wp': '工作论文', 'nav.contact': '联系',
+        'hero.title': '你的名字（Name）',
+        'hero.text': '现任 <strong>职称</strong>，就职于 <strong>单位</strong>。研究领域：<em>应用微观经济理论 / 竞赛理论 / 产业组织 / 行为经济学</em>。<br>教育背景：<span class="mono">经济学博士，学校，年份</span>。',
+        'about.title': '简介', 'about.pill': '简历',
+        'about.text': '用 3–5 句介绍你的学术背景与研究兴趣，突出研究路线与代表性成果（可量化）。',
+        'about.edu': '<strong>教育</strong>：BA/MA/PhD（学校，年份）。',
+        'about.appt': '<strong>任职</strong>：讲师 → 副教授 → 教授（年份）。',
+        'about.fields': '<strong>研究方向</strong>：Contest Theory, Insurance, IO, Behavioral Economics 等。',
+        'links.title': '链接', 'links.pill': '资料',
+        'links.items': '<a href="/cv.pdf" target="_blank" rel="noopener">CV / 简历</a> · <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>',
+        'links.note': '也可以放 SSRN / ORCID / RePEc 等学术档案链接。',
+        'pubs.title': '发表论文', 'pubs.view': '查看全部',
+        'pubs.item1': '<strong>论文标题</strong>，合作者，<em>期刊</em>，年份，卷(期)，页码。 <a href="#">PDF</a> · <a href="#">附录</a>',
+        'pubs.item2': '<strong>论文标题</strong>，合作者，<em>期刊</em>，年份。 <a href="#">DOI</a>',
+        'pubs.item3': '<strong>论文标题</strong>，合作者，<em>期刊（即刊）</em>。 <span class="pill">即刊</span>',
+        'wp.title': '工作论文', 'wp.pill': '草稿',
+        'wp.item1': '<strong>工作论文标题</strong>，合作者。 <a href="#">PDF</a> · <a href="#">Slides</a>',
+        'wp.item2': '<strong>工作论文标题</strong>，合作者。 <a href="#">arXiv/SSRN</a>',
+        'contact.title': '联系', 'contact.pill': '通信信息',
+        'contact.addrLabel': '地址', 'contact.addr': '某大学 经济学院（邮编）',
+        'contact.emailLabel': '邮箱', 'contact.officeLabel': '办公室', 'contact.office': '楼号-房间',
+        'contact.phoneLabel': '电话', 'contact.phone': '+86-010-xxxx-xxxx'
+      },
+      en: {
+        titleTag: 'Your Name · Academic Homepage',
+        metaDesc: 'Academic homepage: research areas, publications, working papers, and contact.',
+        name: 'Your Name',
+        affil: 'School of Economics · University · Title',
+        'nav.home': 'Home', 'nav.about': 'About', 'nav.pubs': 'Publications', 'nav.wp': 'Working Papers', 'nav.contact': 'Contact',
+        'hero.title': 'Your Name',
+        'hero.text': 'I am a <strong>Title</strong> at <strong>Institution</strong>. My research interests include <em>applied microeconomic theory, contest theory, industrial organization, and behavioral economics</em>.<br>Education: <span class="mono">Ph.D. in Economics, University, Year</span>.',
+        'about.title': 'Bio', 'about.pill': 'CV',
+        'about.text': 'Write 3–5 sentences highlighting your academic background, research agenda, and representative results (with quantifiable impact).',
+        'about.edu': '<strong>Education</strong>: BA/MA/PhD (University, Year).',
+        'about.appt': '<strong>Appointments</strong>: Lecturer → Associate Professor → Professor (Years).',
+        'about.fields': '<strong>Fields</strong>: Contest Theory, Insurance, IO, Behavioral Economics, etc.',
+        'links.title': 'Links', 'links.pill': 'Resources',
+        'links.items': '<a href="/cv.pdf" target="_blank" rel="noopener">CV</a> · <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>',
+        'links.note': 'You may also include SSRN / ORCID / RePEc profiles.',
+        'pubs.title': 'Publications', 'pubs.view': 'View all',
+        'pubs.item1': '<strong>Paper Title</strong>, with Coauthors, <em>Journal</em>, Year, Volume(Issue), pages. <a href="#">PDF</a> · <a href="#">Appendix</a>',
+        'pubs.item2': '<strong>Paper Title</strong>, with Coauthors, <em>Journal</em>, Year. <a href="#">DOI</a>',
+        'pubs.item3': '<strong>Paper Title</strong>, with Coauthors, <em>Forthcoming in Journal</em>. <span class="pill">forthcoming</span>',
+        'wp.title': 'Working Papers', 'wp.pill': 'drafts',
+        'wp.item1': '<strong>WP Title</strong>, with Coauthors. <a href="#">PDF</a> · <a href="#">Slides</a>',
+        'wp.item2': '<strong>WP Title</strong>, with Coauthors. <a href="#">arXiv/SSRN</a>',
+        'contact.title': 'Contact', 'contact.pill': 'Info',
+        'contact.addrLabel': 'Address', 'contact.addr': 'School of Economics, University (Postal Code)',
+        'contact.emailLabel': 'Email', 'contact.officeLabel': 'Office', 'contact.office': 'Building-Room',
+        'contact.phoneLabel': 'Phone', 'contact.phone': '+86-010-xxxx-xxxx'
+      }
+    };
+
+    function setLang(lang){
+      const dict = i18n[lang] || i18n.zh;
+      document.documentElement.lang = (lang === 'en' ? 'en' : 'zh-CN');
+      document.title = dict.titleTag;
+      const meta = document.getElementById('meta-desc');
+      if(meta) meta.setAttribute('content', dict.metaDesc);
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
+            el.setAttribute('placeholder', dict[key]);
+          } else {
+            el.innerHTML = dict[key];
+          }
+        }
+      });
+      const btn = document.getElementById('langToggle');
+      if (btn) btn.textContent = (lang === 'en' ? '中文' : 'EN');
+      localStorage.setItem('lang', lang);
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const saved = localStorage.getItem('lang') || (navigator.language.startsWith('zh') ? 'zh' : 'en');
+    setLang(saved);
+    document.getElementById('langToggle').addEventListener('click', () => {
+      const current = localStorage.getItem('lang') || 'zh';
+      setLang(current === 'zh' ? 'en' : 'zh');
+    });
+  </script>
+</body>
+</html>
